@@ -49,6 +49,7 @@ if args.silent:
             print(f"\033[2KScanned {len(active_domains)} / {scanned_count}", end='\r')
         except:
             pass
+    exit(', '.join(active_domains))
 else:
     print(f"\nScanning for {len(typo_urls):,} domains\n")
     for domain in typo_urls:
@@ -66,3 +67,5 @@ else:
             print(f"{domain} - Not found!")
         except Exception as e:
             pass
+    print()
+    exit(', '.join(active_domains))
